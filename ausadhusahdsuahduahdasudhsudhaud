@@ -1,0 +1,43 @@
+local BlekLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laderite/bleklib/main/library.lua"))()
+local win = BlekLib:Create({
+    Name = "Blek Library",
+    StartupSound = {
+        Toggle = false,
+        SoundID = "rbxassetid://6958727243",
+        TimePosition = 1
+    }
+})
+---Main page
+local maintab = win:Tab('Main')
+maintab:Button('Destroy GUI', function(q1)
+    win:Exit(q1)
+end)
+
+maintab:Textbox('press this', function(c1)
+  if no win then
+    win:Exit(c1)
+end)
+
+maintab:Toggle('test for beta', function(v1)
+ print(v1)
+end)
+
+maintab:Slider('FOV', 30 -- default, 10 -- min, 300 -- max, function(a1)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed(a1)
+end)
+
+maintab:Label('next in pornotab')(
+end)
+
+local nigtab = nig:Tab('Main')
+nigtab:Label('Other shit for character')
+
+nigtab:Slider('FOV', 30 -- default, 16 -- min, 300 -- max, function(a)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (a)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = (a)
+end)
+
+nigtab:Toggle('Tween tp to (item)', function()
+    while wait(.5) do
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrane = CFrame.new(Coin)
+end)
