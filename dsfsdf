@@ -51,7 +51,7 @@ local function tojidildo()
     print("NoClip disabled.")
 end
 
-Tab1:AddLabel("HUI")
+
 
 local function panel()
     local screenGui = Instance.new("ScreenGui")
@@ -79,10 +79,10 @@ local function panel()
     end
 end
 
-panel() 
+
 
 local autoPressToggle = false
-
+Tab1:AddLabel("HUI")
 Tab1:AddToggle({
     Name = "Auto press X",
     Default = false,
@@ -110,4 +110,5 @@ Tab1:AddToggle({
     end
 })
 
+panel() 
 OrionLib:Init()
