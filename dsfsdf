@@ -1,12 +1,113 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.8) ~  Much Love, Ferib 
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+local Window = OrionLib:MakeWindow({Name = "lzghf hub new era", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-]]--
+local uis = game:GetService("UserInputService")
+local Client = game.Players.LocalPlayer
+local ClientChar = Client.Character or Client.CharacterAdded:Wait()
 
-local v0=loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))();local v1=v0:MakeWindow({Name="lzghf hub new era",HidePremium=false,SaveConfig=true,ConfigFolder="OrionTest"});local v2=game:GetService("UserInputService");local v3=game.Players.LocalPlayer;local v4=v3.Character or v3.CharacterAdded:Wait() ;local v5=v1:MakeTab({Name="Tab 1",Icon="rbxassetid://4483345998",PremiumOnly=false});local v6=v5:AddSection({Name="Section"});local v7=18688207529 -(282 + 595) ;v0:MakeNotification({Name="hello!",Content=tostring(v7),Image="rbxassetid://4483345998",Time=1192 -(1069 + 118) });local function v8(v14) local v15=1637 -(1523 + 114) ;while true do if (v15==0) then if  not v4 then v4=game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait() ;end for v38,v39 in pairs(v4:GetDescendants()) do if (v39:IsA("BasePart") or v39:IsA("MeshPart")) then v39.CanCollide= not v14;end end break;end end end local v9=false;local v10=CFrame.new(2344.52124 + 264 ,20.055027,4333.78333 -2352 ) * CFrame.Angles(0.872302413 -0 , -(0.190613955 -0),1065.45028311 -(68 + 997) ) ;local function v11() local v16=791 -(368 + 423) ;while true do if (v16==1) then v8(false);print("NoClip disabled.");break;end if (v16==(1270 -(226 + 1044))) then v8(true);while v9 do if (v4 and v4:FindFirstChild("HumanoidRootPart")) then v4.HumanoidRootPart.CFrame=v10;wait(12 -9 );else wait(117.1 -(32 + 85) );end end v16=3 -2 ;end end end v5:AddLabel("HUI");local function v12() local v17=Instance.new("ScreenGui");v17.Name="TimeDisplayGui";v17.Parent=game.Players.LocalPlayer:WaitForChild("PlayerGui");local v20=Instance.new("Frame");v20.Size=UDim2.new(442.3 -(416 + 26) ,0 -0 ,0.1 + 0 ,0 + 0 );v20.Position=UDim2.new(0.35,957 -(892 + 65) ,0.45,0 -0 );v20.BackgroundColor3=Color3.new(0 -0 ,0,0 -0 );v20.BackgroundTransparency=350.5 -(87 + 263) ;v20.Parent=v17;local v26=Instance.new("TextLabel");v26.Size=UDim2.new(1487 -(998 + 488) ,180 -(67 + 113) ,1 + 0 ,0 -0 );v26.BackgroundTransparency=1 + 0 ;v26.TextColor3=Color3.new(0 -0 ,1,952 -(802 + 150) );v26.TextScaled=true;v26.Text=os.date("%H:%M:%S");v26.Parent=v20;while true do v26.Text=os.date("%H:%M:%S");wait(2 -1 );end end v12();local v13=false;v5:AddToggle({Name="Auto press X",Default=false,Callback=function(v33) v13=v33;if v13 then while v13 do local v37=0 -0 ;while true do if (v37==(0 + 0)) then game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.X,false,game);wait(997.4 -(915 + 82) );break;end end end end end});v5:AddToggle({Name="Toji Hair Clicker",Default=false,Callback=function(v34) local v35=0 -0 ;while true do if (v35==(0 -0)) then v9=v34;if v9 then v11();else v8(false);end break;end end end});v0:Init();
+local Tab1 = Window:MakeTab({
+    Name = "Tab 1",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Section = Tab1:AddSection({ Name = "Section" })
+
+local gameid = 18688206652
+
+OrionLib:MakeNotification({
+    Name = "hello!",
+    Content = tostring(gameid),
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+local function SetNoClip(state)
+    if not ClientChar then
+        ClientChar = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+    end
+
+    for _, part in pairs(ClientChar:GetDescendants()) do
+        if part:IsA("BasePart") or part:IsA("MeshPart") then
+            part.CanCollide = not state
+        end
+    end
+end
+
+local toggle1 = false
+local mobCFrame = CFrame.new(2608.52124, 20.055027, 1981.78333) * CFrame.Angles(0.872302413, -0.190613955, 0.45028311)
+
+local function tojidildo()
+    SetNoClip(true) 
+    while toggle1 do
+        if ClientChar and ClientChar:FindFirstChild("HumanoidRootPart") then
+            ClientChar.HumanoidRootPart.CFrame = mobCFrame
+            wait(3)
+        else
+            wait(0.1) 
+        end
+    end
+    SetNoClip(false) 
+    print("NoClip disabled.")
+end
+
+Tab1:AddLabel("HUI")
+
+local function panel()
+    local screenGui = Instance.new("ScreenGui")
+    screenGui.Name = "TimeDisplayGui"
+    screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(0.3, 0, 0.1, 0)
+    frame.Position = UDim2.new(0.35, 0, 0.45, 0)
+    frame.BackgroundColor3 = Color3.new(0, 0, 0)
+    frame.BackgroundTransparency = 0.5
+    frame.Parent = screenGui
+
+    local timeLabel = Instance.new("TextLabel")
+    timeLabel.Size = UDim2.new(1, 0, 1, 0)
+    timeLabel.BackgroundTransparency = 1
+    timeLabel.TextColor3 = Color3.new(0, 1, 0)
+    timeLabel.TextScaled = true
+    timeLabel.Text = os.date("%H:%M:%S")
+    timeLabel.Parent = frame
+
+    while true do
+        timeLabel.Text = os.date("%H:%M:%S")
+        wait(1)
+    end
+end
+
+panel() 
+
+local autoPressToggle = false
+
+Tab1:AddToggle({
+    Name = "Auto press X",
+    Default = false,
+    Callback = function(toggle2)
+        autoPressToggle = toggle2
+        if autoPressToggle then
+            while autoPressToggle do
+                game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.X, false, game)
+                wait(0.4)
+            end
+        end
+    end
+})
+
+Tab1:AddToggle({
+    Name = "Toji Hair Clicker",
+    Default = false,
+    Callback = function(tt)
+        toggle1 = tt
+        if toggle1 then
+            tojidildo() 
+        else
+            SetNoClip(false) -- Выключаем NoClip
+        end
+    end
+})
+
+OrionLib:Init()
