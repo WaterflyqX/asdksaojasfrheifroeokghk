@@ -51,36 +51,6 @@ local function tojidildo()
     print("NoClip disabled.")
 end
 
-
-
-local function panel()
-    local screenGui = Instance.new("ScreenGui")
-    screenGui.Name = "TimeDisplayGui"
-    screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
-    local frame = Instance.new("Frame")
-    frame.Size = UDim2.new(0.3, 0, 0.1, 0)
-    frame.Position = UDim2.new(0.35, 0, 0.45, 0)
-    frame.BackgroundColor3 = Color3.new(0, 0, 0)
-    frame.BackgroundTransparency = 0.5
-    frame.Parent = screenGui
-
-    local timeLabel = Instance.new("TextLabel")
-    timeLabel.Size = UDim2.new(1, 0, 1, 0)
-    timeLabel.BackgroundTransparency = 1
-    timeLabel.TextColor3 = Color3.new(0, 1, 0)
-    timeLabel.TextScaled = true
-    timeLabel.Text = os.date("%H:%M:%S")
-    timeLabel.Parent = frame
-
-    while true do
-        timeLabel.Text = os.date("%H:%M:%S")
-        wait(1)
-    end
-end
-
-
-
 local autoPressToggle = false
 Tab1:AddLabel("HUI")
 Tab1:AddToggle({
@@ -110,5 +80,4 @@ Tab1:AddToggle({
     end
 })
 
-panel() 
 OrionLib:Init()
