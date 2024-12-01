@@ -7,7 +7,7 @@ local ClientChar = Client.Character or Client.CharacterAdded:Wait()
 
 local Tab1 = Window:MakeTab({
     Name = "Tab 1",
-    Icon = "rbxassetid://4483345998",
+    Icon = "rbxassetid://6012304512", -- Временная замена иконки
     PremiumOnly = false
 })
 
