@@ -1,1 +1,104 @@
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+local Window = OrionLib:MakeWindow({Name = "lzghf hub new era", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
+local uis = game:GetService("UserInputService")
+local Client = game.Players.LocalPlayer
+local ClientChar = Client.Character or Client.CharacterAdded:Wait()
+
+local Tab1 = Window:MakeTab({
+    Name = "Tab 1",
+    Icon = "rbxassetid://6012304512", -- Временная замена иконки
+    PremiumOnly = false
+})
+
+local Section = Tab1:AddSection({ Name = "Section" })
+
+local gameid = 18688206652
+
+OrionLib:MakeNotification({
+    Name = "hello!",
+    Content = tostring(gameid),
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+local function SetNoClip(state)
+    if not ClientChar then
+        ClientChar = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+    end
+
+    for _, part in pairs(ClientChar:GetDescendants()) do
+        if part:IsA("BasePart") or part:IsA("MeshPart") then
+            part.CanCollide = not state
+        end
+    end
+end
+
+local toggle1 = false
+local mobCFrame = CFrame.new(2608.52124, 20.055027, 1981.78333) * CFrame.Angles(0.872302413, -0.190613955, 0.45028311)
+
+
+local nocock = false;
+
+local function secret()
+    if nocock == true then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+elseif nocock == false or not true then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+end
+end
+
+
+Tab1:AddToggle({
+    Name = "NO COCK AKA ANCHOR",
+    Default = false,
+    Callback = function(toggle3)
+        nocock = toggle3
+        secret(nocock)
+    end
+})
+
+
+local function tojidildo()
+    SetNoClip(true) 
+    while toggle1 do
+        if ClientChar and ClientChar:FindFirstChild("HumanoidRootPart") then
+            ClientChar.HumanoidRootPart.CFrame = mobCFrame
+            wait(3)
+        else
+            SetNoClip(false) 
+            wait(0.1) 
+        end
+    end
+end
+
+local autoPressToggle = false
+Tab1:AddLabel("HUI")
+Tab1:AddToggle({
+    Name = "Auto press X",
+    Default = false,
+    Callback = function(toggle2)
+        autoPressToggle = toggle2
+        if autoPressToggle then
+            while autoPressToggle do
+                game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.X, false, game)
+                wait(0.4)
+            end
+        end
+    end
+})
+
+Tab1:AddToggle({
+    Name = "Toji Hair Clicker",
+    Default = false,
+    Callback = function(tt)
+        toggle1 = tt
+        if toggle1 then
+            tojidildo() 
+        else
+            SetNoClip(false) -- Выключаем NoClip
+        end
+    end
+})
+
+OrionLib:Init()
